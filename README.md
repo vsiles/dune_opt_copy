@@ -36,6 +36,6 @@ Error: %{lib-available:..} isn't allowed in this position
 ```
 (rule
     (target foo.opt.ml)
-    (action (system "[[ %{lib-available:optional_foo} ]] && cp ../optional/foo.opt.ml foo.opt.ml"))
+    (action (system "test ${lib-available:optional_foo} && cp ../optional/foo.opt.ml foo.opt.ml"))
 )
 ```

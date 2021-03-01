@@ -4,8 +4,8 @@
 
 (rule
     (target foo.opt.ml)
-    (enabled_if (= lib-available:optional_foo true))
-    (action (copy ../optional/foo.opt.ml foo.opt.ml)))
+    (action (system "test ${lib-available:optional_foo} && cp ../optional/foo.opt.ml foo.opt.ml"))
+)
 
 (library
     (name foo)
