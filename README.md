@@ -14,3 +14,5 @@ $ dune build @all
 File "src/dune", line 1, characters 0-0:
 Error: No rule found for src/foo.opt.ml
 ```
+
+Note that if I completely remove the `enabled_if` part in `optional/dune`, then it builds and runs correctly.
