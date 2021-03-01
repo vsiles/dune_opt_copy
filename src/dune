@@ -1,0 +1,25 @@
+(rule
+    (target foo.xxx.ml)
+    (action (copy ../stubs/foo.yyy.ml foo.xxx.ml)))
+
+(rule
+    (target foo.opt.ml)
+    (enabled_if (= lib-available:optional_foo true))
+    (action (copy ../optional/foo.opt.ml foo.opt.ml)))
+
+(library
+    (name foo)
+    (modules foo)
+    (libraries
+        (select foo.ml from
+            (optional_foo -> foo.opt.ml)
+            ( -> foo.xxx.ml)
+        )
+    )
+)
+
+(executable
+    (name main)
+    (modules main)
+    (libraries foo)
+)
