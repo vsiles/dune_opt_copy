@@ -1,7 +1,10 @@
 # dune_opt_copy
 sandbox to test dune optional copy 
 
-Scenario to run:
+# version:
+dune 2.8.2
+
+# Scenario to run:
 ```
 $ dune clean
 $ dune build @all
