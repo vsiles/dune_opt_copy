@@ -2,7 +2,8 @@
 sandbox to test dune optional copy 
 
 # version:
-dune 2.8.2
+- dune 2.8.2
+- (lang dune 2.8)
 
 # Scenario to run:
 ```
