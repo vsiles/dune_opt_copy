@@ -30,3 +30,12 @@ File "src/dune", line 14, characters 22-49:
                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: %{lib-available:..} isn't allowed in this position
 ```
+
+# Potential solution: not use `copy` but systems' `cp`
+
+```
+(rule
+    (target foo.opt.ml)
+    (action (system "[[ %{lib-available:optional_foo} ]] && cp ../optional/foo.opt.ml foo.opt.ml"))
+)
+```
